@@ -1,6 +1,6 @@
 resource "aws_instance" "dcos_bootstrap" {
     ami = "${var.rhel_ami}"
-    availability_zone = "${var.vpc_region}a"
+    availability_zone = "${var.az}"
     instance_type = "t2.large"
     key_name = "${var.aws_key_name}"
     security_groups = [ "${var.ssh_access_sg}" ]
@@ -29,7 +29,7 @@ resource "aws_instance" "dcos_bootstrap" {
 }
 resource "aws_instance" "dcos_master0" {
     ami = "${var.rhel_ami}"
-    availability_zone = "${var.vpc_region}b"
+    availability_zone = "${var.az}"
     instance_type = "t2.large"
     key_name = "${var.aws_key_name}"
     security_groups = [ "${var.ssh_access_sg}", "${aws_security_group.mesos_server.id}" ]
@@ -57,7 +57,7 @@ resource "aws_instance" "dcos_master0" {
 }
 resource "aws_instance" "dcos_agent0" {
     ami = "${var.rhel_ami}"
-    availability_zone = "${var.vpc_region}a"
+    availability_zone = "${var.az}"
     instance_type = "t2.large"
     key_name = "${var.aws_key_name}"
     security_groups = [ "${var.ssh_access_sg}", "${aws_security_group.mesos_server.id}" ]
@@ -85,7 +85,7 @@ resource "aws_instance" "dcos_agent0" {
 }
 resource "aws_instance" "dcos_agent1" {
     ami = "${var.rhel_ami}"
-    availability_zone = "${var.vpc_region}a"
+    availability_zone = "${var.az}"
     instance_type = "t2.large"
     key_name = "${var.aws_key_name}"
     security_groups = [ "${var.ssh_access_sg}", "${aws_security_group.mesos_server.id}" ]
@@ -113,7 +113,7 @@ resource "aws_instance" "dcos_agent1" {
 }
 resource "aws_instance" "dcos_agent2" {
     ami = "${var.rhel_ami}"
-    availability_zone = "${var.vpc_region}a"
+    availability_zone = "${var.az}"
     instance_type = "t2.large"
     key_name = "${var.aws_key_name}"
     security_groups = [ "${var.ssh_access_sg}", "${aws_security_group.mesos_server.id}" ]

@@ -4,6 +4,7 @@ variable "aws_key_name" {}
 variable "aws_key_path" {}
 variable "vpc_id" {}
 variable "vpc_region" {}
+variable "az" {}
 variable "subnet-private" {}
 variable "subnet-private_cidr" {}
 variable "subnet-public" {}
