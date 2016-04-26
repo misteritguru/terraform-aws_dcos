@@ -9,7 +9,7 @@ resource "aws_instance" "dcos_bootstrap" {
     source_dest_check = false
     
     tags {
-        Name = "ctt_dc_boot"
+        Name = "dcos_bootstrap"
     }
     connection {
       user = "ec2-user"
@@ -38,7 +38,7 @@ resource "aws_instance" "dcos_master0" {
     source_dest_check = false
 
     tags {
-        Name = "ctt_dc_master0"
+        Name = "dcos_master0"
     }
     connection {
       user = "ec2-user"
@@ -66,7 +66,7 @@ resource "aws_instance" "dcos_agent0" {
     source_dest_check = false
     
     tags {
-        Name = "ctt_dc_agent0"
+        Name = "dcos_agent0"
     }
     connection {
       user = "ec2-user"
@@ -94,7 +94,7 @@ resource "aws_instance" "dcos_agent1" {
     source_dest_check = false
     
     tags {
-        Name = "ctt_dc_agent1"
+        Name = "dcos_agent1"
     }
     connection {
       user = "ec2-user"
@@ -122,7 +122,7 @@ resource "aws_instance" "dcos_agent2" {
     source_dest_check = false
     
     tags {
-        Name = "ctt_dc_agent2"
+        Name = "dcos_agent2"
     }
     connection {
       user = "ec2-user"
