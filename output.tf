@@ -11,10 +11,10 @@ output "dcos_master0_id" {
   value = "${aws_instance.dcos_master0.id}"
 }
 output "dcos_master0_priv_ip" {
-  value = "${aws_instance.master0.private_ip}"
+  value = "${aws_instance.dcos_master0.private_ip}"
 }
 output "dcos_master0_pub_ip" {
-  value = "${aws_instance.master0.public_ip}"
+  value = "${aws_instance.dcos_master0.public_ip}"
 }
 output "dcos_agent0_id" {
   value = "${aws_instance.dcos_agent0.id}"
