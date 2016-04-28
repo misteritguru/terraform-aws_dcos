@@ -4,9 +4,6 @@ output "mesos_agent_sg" {
 output "mesos_server_sg" {
   value = "${aws_security_group.mesos_server.id}"
 }
-output "dcos_bootstrap_id" {
-  value = "${aws_instance.dcos_bootstrap.id}"
-}
 output "dcos_master0_id" {
   value = "${aws_instance.dcos_master0.id}"
 }
