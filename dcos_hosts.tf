@@ -24,7 +24,7 @@ resource "aws_instance" "dcos_master0" {
       "cd ~/cookbooks/ctt_dcos && berks install",
       "cd ~/cookbooks/ctt_dcos && berks vendor ~/cookbooks",
       "sudo chef-client -z -o ctt_dcos::master",
-      "sudo sed -i -e 's/AGENT0/${aws_instance.dcos_agent0.private_ip}/' -e 's/AGENT1/${aws_instance.dcos_agent1.private_ip}/' -e 's/AGENT2/${aws_instance.dcos_agent2.private_ip}/' /root/genconf/config.yaml",
+      "sudo sed -i -e 's/MASTER0/${aws_instance.dcos_master0.private_ip}/' -e 's/AGENT0/${aws_instance.dcos_agent0.private_ip}/' -e 's/AGENT1/${aws_instance.dcos_agent1.private_ip}/' -e 's/AGENT2/${aws_instance.dcos_agent2.private_ip}/' /root/genconf/config.yaml",
       "sudo /root/create_bootstrap_components.sh",
       "sudo /root/install_dcos.sh"
       ]
