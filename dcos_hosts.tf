@@ -33,8 +33,8 @@ resource "aws_instance" "dcos_master0" {
     instance_type = "t2.large"
     key_name = "${var.aws_key_name}"
     security_groups = [ "${var.ssh_access_sg}", "${aws_security_group.mesos_server.id}" ]
-    subnet_id = "${var.subnet-public}"
-    associate_public_ip_address = true
+    subnet_id = "${var.subnet-private}"
+    associate_public_ip_address = false
     source_dest_check = false
 
     tags {

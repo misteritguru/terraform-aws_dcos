@@ -6,7 +6,7 @@ resource "aws_security_group" "mesos_agent" {
     from_port = 5051
     to_port = 5051
     protocol = "tcp"
-    cidr_blocks = ["${var.subnet-public_cidr}"]
+    cidr_blocks = ["${var.subnet-private_cidr}"]
   }
   ingress {
     from_port = -1
@@ -29,13 +29,6 @@ resource "aws_security_group" "mesos_agent" {
 resource "aws_security_group" "mesos_server" {
   name = "mesos_server"
   description = "Mesos agent to server communication"
-
-  ingress {
-    from_port = 22
-    to_port = 22
-    protocol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
 
   ingress {
     from_port = 80
